@@ -6,11 +6,13 @@ private:
     string name;
     bool gender;
     int age;
+    string nation;
+    bool isAlive;
 
 public:
     
     Human();
-    Human(string name, bool gender, int age);
+    Human(string name, bool gender, int age,string nation , bool isAlive);
     Human(const Human& human);
     ~Human();
 
@@ -21,6 +23,10 @@ public:
     void setName();
     void setAge();
     void setGender();
+    bool isAlive();
+    void setAlive();
+    string getNation();
+    void setNation();
 
    
     string toString() ;

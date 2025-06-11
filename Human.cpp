@@ -1,14 +1,16 @@
 #include "Human.h"
 //base class
-Human::Human() : Human("", 0 , false){
+Human::Human() : Human("", false , 0 , "no nation", false){
 	cout << "Human default constractor"<< endl;
 }
-Human::Human(string name, bool gender, int age){
+Human::Human(string name, bool gender, int age, string nation, bool isAlive){
 	this->name = name;
 	this->age = age;
 	this->gender = gender;
+	this->nation = nation;
+	this->isAlive = isAlive;
 }
-Human::Human(const Human& human) : Human(human.name , human.age , human.gender){}
+Human::Human(const Human& human) : Human(human.name , human.age , human.gender , human.nation , human.isAlive){}
 
 Human::~Human() {
     cout << "Human destructor" << endl;
@@ -32,6 +34,19 @@ bool Human::isGender(){
 void Human::setGender(){
 	this->gender = gender;
 }
+bool Human::isAlive(){
+	return isAlive;
+}
+void Human::setAlive(){
+	this->isAlive = isAlive;
+}
+string Human::getNation(){
+	return nation;
+}
+void Human::setNation(){
+	this->nation = nation;
+}
+
 
 string Human::toString(){
 	string s = "";
